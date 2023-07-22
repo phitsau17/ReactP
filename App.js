@@ -3,9 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import DisplayandImage from './components/DisplayandImage';
 import LotsOfGreeting from './components/LotsOfGreeting';
 import CustomText from './components/CustomText';
-import Couter from './components/Couter';
+import Counter from './components/Counter';
 import MyInput from './components/MyInput';
-import IncrementCiunter from './components/IncrementCiunter';
+import IncrementCounter from './components/IncrementCounter';
 import Form from './components/Form';
 
 export default function App() {
