@@ -1,3 +1,5 @@
+import { StyleSheet, Text, View } from "react-native";
+import ViewBoxesWithColorAndText from "./components/ViewBoxesWithColorAndText";
 import DisplayandImage from "./components/DisplayandImage";
 import LotsOfGreeting from "./components/LotsOfGreeting";
 import CustomText from "./components/CustomText";
@@ -6,6 +8,7 @@ import MyInput from "./components/MyInput";
 import IncrementCounter from "./components/IncrementCounter";
 import Form from "./components/Form";
 import Login from "./components/Login";
+import Recap from "./components/Recap";
 
 export default function App() {
   return (
@@ -17,13 +20,13 @@ export default function App() {
       {/* <Counter/> */}
       {/* <MyInput/> */}
       {/* <IncrementCounter/> */}
-      <Form/>
       {/* <Form/> */}
       <Login/>
+      {/* <Login/> */}
+      <Recap/>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container:{
      flex:1,   
