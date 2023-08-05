@@ -1,17 +1,25 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Image } from 'https://jsonplaceholder.typicode.com/posts'
-import { Image2 } from 'https://randomuser.me/api/?results=15'
-import { TouchableOpacity } from 'react-native-web'
-
 
 const TouchablePractice = () => {
   return (
-    <View>
-      <TouchableOpacity>
-        <Image/>
-        <View/>
-        <Text>Login Using Facebook</Text>
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.buttonFacebookStyle}>
+        <Image
+          source={require("../assets/facebook.png")}
+          style={styles.buttonImageIconStyle}
+        />
+        <View style={styles.buttonIconSeparatorStyle} />
+        <Text style={styles.buttonTextStyle}>Login Using Facebook</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.buttonGPlusStyle}>
+        <Image
+          source={require("../assets/google-plus.png")}
+          style={styles.buttonImageIconStyle}
+        />
+        <View style={styles.buttonIconSeparatorStyle} />
+        <Text style={styles.buttonTextStyle}>Login Using Facebook</Text>
       </TouchableOpacity>
     </View>
   )
