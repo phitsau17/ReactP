@@ -1,6 +1,5 @@
 Student ID : 2013110354
 Student Name : Phitsanu Iamphong
-<<<<<<< HEAD
 DateToStudy : 05/08/2023
 ClassTopic : 1. Recap : Practice with Touchable Components
 	     2. React Hook part useEffect
