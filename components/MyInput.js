@@ -1,37 +1,39 @@
-import { Text, View, Button } from 'react-native'
-import React, {useState} from 'react'
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native'
+import React, { useState } from 'react'
 
-const IncrementCiunter = () => {
+const MyInput = () => {
 
-    const [age,setAge] = useState(23); //build state
-
-    const increment = ()=> { //Build function
-        setAge(a => a + 1);
-    }
-
+    const [text, setText] = useState('')
   return (
-    <View>
-        <Text style={{fontSize:24,fontStyle:'bold'}}>
-            Your age: {age}
-        </Text> 
-
+    <View style={styles.container}>
+        <TextInput
+            placeholder = 'Enter Text'
+            style = {styles.textInputStyle}
+            value = {text}
+            onChangeText={(value) => {setText(value)}}
+        />
+        <Text>{'\n\n'}You typed: {text}</Text>
         <Text>{'\n\n'}</Text>
-        <Text>{'\n\n'}</Text>
-
-        <Button 
-        title='+3'
-        onPress={()=>{increment(setAge(a => a + 2))}}/>
-
-        <Text>{'\n\n'}</Text>
-        <Text>{'\n\n'}</Text>
-
-        <Button 
-        title='+1'
-        onPress={()=>{increment()}}/>
-
+        <Button
+            title='RESET'
+            onPress={() => setText('Hello')}
+        />
     </View>
   )
-
 }
 
-export default IncrementCiunter
+export default MyInput
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 35,
+    },
+    textInputStyle: {
+        width: '100%',
+        height: 40,
+        paddingHorizontal: 5,
+        borderWidth: 0.5,
+        marginTop: 15,
+    }
+})

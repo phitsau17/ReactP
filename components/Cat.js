@@ -1,8 +1,16 @@
+import { View, Text } from "react-native";
 import React from "react";
-import { Text } from "react-native-web";
+
+const getFullName = (fn, sn, tn) => {
+  return fn + " " + sn + " " + tn;
+};
 
 const Cat = () => {
-    return <text>Hello, We are yous cats!</text>
+  return (
+    <View>
+      <Text>Hello, I am {getFullName("Tomas", "Tom", "Cat")}!!</Text>
+    </View>
+  );
 };
 
 export default Cat;

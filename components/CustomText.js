@@ -1,22 +1,21 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const MyCustomTextWith = ({fName1,lname1}) => {
-  return (
-   <Text>Your First Name is {fName1} and Last Name is {lname1}</Text>);
-
- }
+const MyCustomTextWith = ({fname, lname}) => {
+    return(
+        <View>
+            <Text>Your First Name is {fname}! and Last name is {lname}</Text>
+        </View>
+    )
+}
 
 const CustomText = () => {
   return (
-  <View>
-      <MyCustomTextWith 
-      fName1={"Phitsanu"}
-      lname1={"Iamphong"}/>
-      <MyCustomTextWith
-      fName1={"Alice"}
-      lname1={"Red"}/>
-  </View> );
+    <View>
+      <MyCustomTextWith fname="Phitsanu" lname="Iamphong"/>
+      <MyCustomTextWith fname="Sukrit" lname="Rerk-u-cote"/>
+    </View>
+  )
 }
 
 export default CustomText

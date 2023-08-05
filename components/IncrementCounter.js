@@ -1,37 +1,39 @@
-import { Text, View, Button } from 'react-native'
-import React, {useState} from 'react'
+import { StyleSheet, Text, View, Button } from 'react-native'
+import React, { useState } from 'react'
+import { TextInput } from 'react-native'
 
-const IncrementCiunter = () => {
+const IncrementCounter = () => {
 
-    const [age,setAge] = useState(23); //build state
+    const [age, setAge] = useState(23)
 
-    const increment = ()=> { //Build function
-        setAge(a => a + 1);
+    const increment = () => {
+        setAge(a => a + 1)
     }
 
-  return (
-    <View>
-        <Text style={{fontSize:24,fontStyle:'bold'}}>
-            Your age: {age}
-        </Text> 
-
-        <Text>{'\n\n'}</Text>
-        <Text>{'\n\n'}</Text>
-
-        <Button 
-        title='+3'
-        onPress={()=>{increment(setAge(a => a + 2))}}/>
-
-        <Text>{'\n\n'}</Text>
-        <Text>{'\n\n'}</Text>
-
-        <Button 
-        title='+1'
-        onPress={()=>{increment()}}/>
-
-    </View>
-  )
-
+    return (
+        <View>
+            <Text style={{fontSize: 24, fontStyle: 'bold'}}>
+                Your age: {age}</Text>
+            <Text>{'\n'}</Text>
+            <Button
+                title='+3'
+                onPress={() => {
+                    increment(); 
+                    increment();
+                    increment();
+            }}
+            />
+            <Text>{'\n'}</Text>
+            <Button
+                title='+1'
+                onPress={() => {
+                    increment();
+                } }
+            />
+        </View>
+    )
 }
 
-export default IncrementCiunter
+export default IncrementCounter
+
+const styles = StyleSheet.create({})
