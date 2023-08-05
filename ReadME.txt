@@ -1,5 +1,6 @@
 Student ID : 2013110354
 Student Name : Phitsanu Iamphong
 DateToStudy : 22/07/2023
-ClassTopic : 1.React Hook >> useState
-             2.React Native Part.2 >> Input, Stylesheet Components, Flexbox
+ClassTopic : 1. Recap : Practice with Touchable Components
+	     2. React Hook part useEffect
+	     3. Example and Practice React Hook part useEffect
