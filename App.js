@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
-import TouchablePractice from './components/TouchablePractice';
-import Example_useEffect from './components/Example_useEffect';
-import UseEffectFlatList from './components/UseEffectFlatList';
+import Example_useEffect from './components/Example_useEffect'
+import UseEffectFlatList from './components/UseEffectFlatList'
+import RandomUsersScreen from './components/RandomUsersScreen'
+import FlatList_Example1 from './components/FlatList_Example1'
+import FlatList_HeaderFooter from './components/FlatList_HeaderFooter'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <TouchablePractice/>
-      {/* <Example_useEffect/> */}
-      <UseEffectFlatList/>
+       <RandomUsersScreen/>
+       {/* <RandomUsersScreen/> */}
+       {/* <FlatList_Example1/> */}
+       <FlatList_HeaderFooter/>
+
     </View>
   );
 }
