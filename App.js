@@ -1,29 +1,42 @@
-import Example_useEffect from './components/Example_useEffect'
-import UseEffectFlatList from './components/UseEffectFlatList'
-import RandomUsersScreen from './components/RandomUsersScreen'
-import FlatList_Example1 from './components/FlatList_Example1'
-import FlatList_HeaderFooter from './components/FlatList_HeaderFooter'
-import FlastListAPI from './components/FlastListAPI'
-import News from './components/News'
-import ProductScreen from './components/ProductScreen'
+import { View, Text, Button } from "react-native";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "./screens/HomeScreen";
+import DetailsScreen from "./screens/DetailsScreen";
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+// function HomeScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Text>Home Screen</Text>
+//       <Button title="Go to Details" onPress={() => navigation.navigate('Detail')} />
+//     </View>
+//   );
+// }
+
+// function DetailsScreen() {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Text>Detail Screen</Text>
+//     </View>
+//   );
+// }
+
+const App = () => {
   return (
-    <View style={styles.container}>
-       <ProductScreen/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Overview" }}
+        />
+        <Stack.Screen name="Detail" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
