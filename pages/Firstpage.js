@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Button } from 'react-native'
 import React from 'react'
 
-const Firstpage = ({navigation}) => {
+const FirstPage = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.textStyle}>This is the First Page of the app</Text>
@@ -13,7 +13,7 @@ const Firstpage = ({navigation}) => {
   )
 }
 
-export default Firstpage
+export default FirstPage
 
 const styles = StyleSheet.create({
     container: {

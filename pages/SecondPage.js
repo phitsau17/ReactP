@@ -15,7 +15,7 @@ const SecondPage = ({navigation}) => {
       />
       <Button
             title='Go to First Page'
-            onPress={()=>navigation.navigate('Firstpage')}
+            onPress={()=>navigation.navigate('FirstPage')}
       />
       <Button
             title='Go to Third Page'

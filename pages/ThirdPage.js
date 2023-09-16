@@ -15,7 +15,7 @@ const ThirdPage = ({navigation}) => {
       />
       <Button
             title='Reset Navigator to first page'
-            onPress={()=>navigation.navigate('Firstpage')}
+            onPress={()=>navigation.navigate('FirstPage')}
       />
     </View>
   )
