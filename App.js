@@ -1,55 +1,79 @@
-import * as React from 'react';
-import { View, Text, Linking} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import {
-  createDrawerNavigator,
-  DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem,
-} from '@react-navigation/drawer';
+import { View, Text } from "react-native";
+import React from "react";
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed Screen</Text>
-    </View>
-  );
-}
-
-function Article() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Article Screen</Text>
-    </View>
-  );
-}
-
-function CustomDrawerContent(props) {
-  return (
-    <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
-      <DrawerItem label="Help" onPress={() => Linking.openURL('https://reactnative.dev/blog')} />
-    </DrawerContentScrollView>
-  );
-}
+import CustomSideBarMenu from "./screens/CustomSideBarMenu";
+import FirstPage from './pages/FirstPage';
+import SecondPage from './pages/SecondPage'
+import ThirdPage from "./pages/ThirdPage";;
 
 const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
+
+function FirstScreenStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}
+    >
+      <Stack.Screen name="FirstPage" component={FirstPage} />
+      <Stack.Screen name="SecondPage" component={SecondPage} />
+      <Stack.Screen name="ThirdPage" component={ThirdPage} />
+    </Stack.Navigator>
+  );
+}
+function SecondScreenStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}
+    >
+      <Stack.Screen name="SecondPage" component={SecondPage} />
+      <Stack.Screen name="FirstPage" component={FirstPage} />
+      <Stack.Screen name="ThirdPage" component={ThirdPage} />
+    </Stack.Navigator>
+  );
+}
 
 function MyDrawer() {
   return (
-    <Drawer.Navigator      
-      drawerContent={(props) => <CustomDrawerContent {...props} />}
+    <Drawer.Navigator
+      screenOptions={{
+        drawerStyle: {
+          backgroundColor: "#003366",
+          width: 240,
+        },
+      }}
+      drawerContent={(props) => <CustomSideBarMenu {...props} />}
+    
     >
-      <Drawer.Screen name="Feed" component={Feed} />
-      <Drawer.Screen name="Article" component={Article} />
+      <Drawer.Screen
+        name="FirstPage"
+        component={FirstScreenStack}
+        options={{ title: "First Drawer", drawerLabel: "First Page Option" }}
+      />
+      <Drawer.Screen
+        name="SecondPage"
+        component={SecondScreenStack}
+        options={{ title: "Second Drawer", drawerLabel: "Second Page Option" }}
+      />
     </Drawer.Navigator>
   );
 }
 
-export default function App() {
+
+
+const App = () => {
   return (
     <NavigationContainer>
-      <MyDrawer />
+    <MyDrawer />
     </NavigationContainer>
   );
-}
+};
+
+export default App;
